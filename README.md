@@ -1,6 +1,20 @@
-# AngularMaterialNews
+# AnuglarNews
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.0.
+
+## Before running the application
+
+Go to `https://newsapi.org` website, and follow the instructions to create your account and get your `API_KEY`.
+
+Then, make sure to create the environment on your local machine.
+First, run `ng g environments`, then go to `src/environments/` and fill the environment files using this template:
+
+```
+  export const environment = {
+  production: true,
+  apiKey: YOUR_NEWS_API_KEY,
+};
+```
 
 ## Development server
 
@@ -25,3 +39,4 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+# angular-material-news
