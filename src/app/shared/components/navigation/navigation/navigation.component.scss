@@ -1,4 +1,31 @@
+@use "@angular/material" as mat;
+
+@include mat.core();
+@import '../../../../../assets/scss/palettes';
+
+
 .navigation-container {
   display: flex;
   flex-direction: column;
+
+  .button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .list-element {
+      cursor: pointer;
+      border-radius: 0.25rem;
+    }
+
+    .active-route {
+      background-color: rgba(91, 91, 214, 0.4);
+    }
+  }
 }

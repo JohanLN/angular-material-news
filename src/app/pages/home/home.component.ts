@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { newsMock } from '../../core/constants/news-mock';
 import { News } from '../../core/models/news.model';
 import { NewsService } from '../../core/services/news/news.service';
 import { ArticleCardComponent } from '../../shared/components/article-card/article-card.component';
@@ -26,7 +27,8 @@ export class HomeComponent {
   constructor(private newsService: NewsService) {}
 
   ngOnInit(): void {
-    this.getHeadlines();
+    // this.getHeadlines();
+    this.news = newsMock;
     console.log('coucou', this.news);
   }
 

@@ -1,10 +1,21 @@
 .home-container {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  overflow-x: scroll;
   gap: 12px;
 
+  .navigation-container {
+    flex: 1;
+    overflow-y:inherit;
+  }
 
   .article-container {
+    flex: 3;
+  }
+
+  .weather-container {
+    flex: 1;
   }
 
   .article-list {

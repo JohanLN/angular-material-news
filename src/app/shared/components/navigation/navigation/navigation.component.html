@@ -6,24 +6,28 @@
         Don't hesitate to create your account or to log in if you are already a
         part of the family ! 😉
       </p>
-      <button mat-raised-button color="primary">Sign up</button>
-      <button mat-button color="primary">Log in</button>
+      <div class="button-group">
+        <button mat-raised-button color="primary">Sign up</button>
+        <button mat-button color="primary">Log in</button>
+      </div>
     </mat-card-content>
   </mat-card>
-  <ul>
-    <li>
-      <a routerLink="/" routerLinkActive="router-link-active">Home</a>
-    </li>
-    <li>
-      <a routerLink="/topics" routerLinkActive="router-link-active">Topics</a>
-    </li>
-    <li>
-      <a routerLink="/favorites" routerLinkActive="router-link-active"
-        >Favorites</a
-      >
-    </li>
-    <li>
-      <a routerLink="/profile" routerLinkActive="router-link-active">Profile</a>
-    </li>
-  </ul>
+  <mat-action-list role="list" class="list-container">
+    <mat-list-item class="list-element" routerLinkActive="active-route">
+      <mat-icon matListItemIcon color="accent">home</mat-icon>
+      <a matListItemTitle routerLink="/">Home</a>
+    </mat-list-item>
+    <mat-list-item class="list-element" routerLinkActive="active-route">
+      <mat-icon matListItemIcon color="accent">topic</mat-icon>
+      <a matListItemTitle routerLink="/topics">Topics</a>
+    </mat-list-item>
+    <mat-list-item class="list-element" routerLinkActive="active-route">
+      <mat-icon matListItemIcon color="accent">favorite</mat-icon>
+      <a matListItemTitle routerLink="/favorites">Favorites</a>
+    </mat-list-item>
+    <mat-list-item class="list-element" routerLinkActive="active-route">
+      <mat-icon matListItemIcon color="accent">person</mat-icon>
+      <a matListItemTitle routerLink="/profile">Profile</a>
+    </mat-list-item>
+  </mat-action-list>
 </div>
