@@ -3,7 +3,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { Router, RouterModule } from '@angular/router';
-import { ThemeService } from '../../../core/services/theme/theme.service';
 
 @Component({
   selector: 'app-header',
@@ -17,7 +16,7 @@ export class HeaderComponent {
     JSON.parse(window.localStorage.getItem('darkMode') ?? 'false')
   );
 
-  constructor(private themeService: ThemeService, private router: Router) {}
+  constructor(private router: Router) {}
 
   toggleTheme() {
     this.isDarkMode.set(!this.isDarkMode());

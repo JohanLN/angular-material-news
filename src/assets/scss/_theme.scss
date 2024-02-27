@@ -24,7 +24,7 @@ $light-theme: mat.define-light-theme((
 
 .light-theme {
   @include mat.all-component-colors($light-theme);
-  background-color: #FDFDFF;
+  background-color: #F0F1FE;
   color: #272962;
 
   .header-theme {
@@ -33,7 +33,7 @@ $light-theme: mat.define-light-theme((
   }
 
   .card-theme {
-    background-color: #F0F1FE ;
+    background-color: #FDFDFF;
   }
 }
 
@@ -48,6 +48,6 @@ $light-theme: mat.define-light-theme((
   }
 
   .card-theme {
-    background-color: #202248;
+    background-color: #212225;
   }
 }

@@ -1,0 +1,51 @@
+.article-container {
+  display: flex;
+  flex-direction: row;
+  overflow: auto;
+  gap: 12px;
+
+  .navigation-container {
+    flex: 1;
+  }
+
+  .article-card {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.25rem;
+
+    .article-image {
+      object-fit: cover;
+      max-height: 55%;
+      max-width: 100%;
+    }
+
+    .article-content {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding: 1rem 3rem;
+
+      .article-infos {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .source-group {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          gap: 6px;
+        }
+      }
+
+      .article-style {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        margin-top: 8px;
+      }
+    } 
+  }
+}

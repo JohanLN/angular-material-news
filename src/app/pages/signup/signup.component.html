@@ -1,1 +1,28 @@
-<p>signup works!</p>
+<div class="signup-container">
+  <div class="card-theme signup-content">
+    <img src="assets/images/angular.png" alt="angular-image" class="logo" />
+    <div class="form-container">
+      <h1>Sign up</h1>
+      <form class="form-content">
+        <mat-form-field>
+          <mat-label>Username</mat-label>
+          <input matInput type="text" placeholder="Username" />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input matInput type="text" placeholder="Email" />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Password</mat-label>
+          <input matInput type="password" placeholder="Password" />
+        </mat-form-field>
+        <div class="button-group">
+          <button mat-raised-button color="primary">
+            Create your account !
+          </button>
+          <button mat-button routerLink="/login">Login</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

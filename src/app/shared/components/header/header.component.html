@@ -6,12 +6,10 @@
         <h2>Angular Material News</h2>
       </div>
       <div class="item-group">
-        <a routerLink="/login"
-          ><button mat-raised-button color="primary">Log in</button></a
-        >
-        <a routerLink="/signup"
-          ><button mat-button color="primary">Sign up</button></a
-        >
+        <button mat-button routerLink="/login">Log in</button>
+        <button mat-raised-button color="primary" routerLink="/signup">
+          Sign up
+        </button>
         <button mat-icon-button color="primary" (click)="toggleTheme()">
           @if (isDarkMode()) {
           <mat-icon>dark_mode</mat-icon>

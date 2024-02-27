@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { ArticlesDetailsComponent } from './pages/articleDetails/articles-details/articles-details.component';
 import { FavoritesComponent } from './pages/favorites/favorites.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -27,6 +28,10 @@ export const routes: Routes = [
       {
         path: 'profile',
         component: ProfileComponent,
+      },
+      {
+        path: 'article/:id',
+        component: ArticlesDetailsComponent,
       },
     ],
   },

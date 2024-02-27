@@ -1,5 +1,5 @@
 <div class="navigation-container">
-  <mat-card>
+  <mat-card class="card-theme">
     <mat-card-content>
       <h1>Hey ! Wanna join my News app community ?</h1>
       <p>
@@ -7,27 +7,45 @@
         part of the family ! 😉
       </p>
       <div class="button-group">
-        <button mat-raised-button color="primary">Sign up</button>
-        <button mat-button color="primary">Log in</button>
+        <button mat-raised-button color="primary" (click)="navigateToSignup()">
+          Sign up
+        </button>
+        <button mat-button (click)="navigateToLogin()">Log in</button>
       </div>
     </mat-card-content>
   </mat-card>
   <mat-action-list role="list" class="list-container">
-    <mat-list-item class="list-element" routerLinkActive="active-route">
+    <mat-list-item
+      class="list-element"
+      routerLinkActive="active-route"
+      routerLink="/"
+    >
       <mat-icon matListItemIcon color="accent">home</mat-icon>
-      <a matListItemTitle routerLink="/">Home</a>
+      <a matListItemTitle>Home</a>
     </mat-list-item>
-    <mat-list-item class="list-element" routerLinkActive="active-route">
+    <mat-list-item
+      class="list-element"
+      routerLinkActive="active-route"
+      routerLink="/topics"
+    >
       <mat-icon matListItemIcon color="accent">topic</mat-icon>
-      <a matListItemTitle routerLink="/topics">Topics</a>
+      <a matListItemTitle>Topics</a>
     </mat-list-item>
-    <mat-list-item class="list-element" routerLinkActive="active-route">
+    <mat-list-item
+      class="list-element"
+      routerLinkActive="active-route"
+      routerLink="/favorites"
+    >
       <mat-icon matListItemIcon color="accent">favorite</mat-icon>
-      <a matListItemTitle routerLink="/favorites">Favorites</a>
+      <a matListItemTitle>Favorites</a>
     </mat-list-item>
-    <mat-list-item class="list-element" routerLinkActive="active-route">
+    <mat-list-item
+      class="list-element"
+      routerLinkActive="active-route"
+      routerLink="/profile"
+    >
       <mat-icon matListItemIcon color="accent">person</mat-icon>
-      <a matListItemTitle routerLink="/profile">Profile</a>
+      <a matListItemTitle>Profile</a>
     </mat-list-item>
   </mat-action-list>
 </div>
