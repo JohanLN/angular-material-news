@@ -1,0 +1,14 @@
+.home-container {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+
+
+  .article-container {
+  }
+
+  .article-list {
+    margin-top: 8px;
+    overflow: auto;
+  }
+}

@@ -1,0 +1,21 @@
+<header class="app-header header-theme">
+  <div class="centered-header">
+    <div class="app-header-container">
+      <div class="item-group">
+        <img src="assets/images/favicon.ico" alt="angular-logo">
+        <h2>Angular Material News</h2>
+      </div>
+      <div class="item-group">
+        <button mat-raised-button color="primary">Login</button>
+        <button mat-button color="primary">SignUp</button>
+        <button mat-icon-button color="primary" (click)="toggleTheme()">
+        @if (isDarkMode()) {
+          <mat-icon>dark_mode</mat-icon>
+        } @else {
+          <mat-icon>light_mode</mat-icon>
+        }
+      </button>
+      </div>
+    </div>
+  </div>
+</header>

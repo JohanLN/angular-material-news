@@ -1,0 +1,17 @@
+.image-cover {
+  object-fit: cover;
+  max-height: 25rem;
+  width: 100%;
+}
+
+.article-content {
+  margin-top: 6px;
+  padding: 6px 30px;
+
+  .author-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

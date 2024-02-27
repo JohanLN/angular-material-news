@@ -1,0 +1,1 @@
+export { compareArticleDateFromNow } from './dateFormatter';

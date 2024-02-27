@@ -1,0 +1,14 @@
+<div class="home-container">
+  <app-navigation></app-navigation>
+  <div class="article-container">
+    <app-filter></app-filter>
+    <div>
+      @if (news) { @for (article of news.articles; track $index) {
+      <div class="article-list">
+        <app-article-card [article]="article"></app-article-card>
+      </div>
+      } }
+    </div>
+  </div>
+  <app-weather></app-weather>
+</div>

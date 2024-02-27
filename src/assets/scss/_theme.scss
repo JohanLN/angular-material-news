@@ -1,0 +1,53 @@
+@use "@angular/material" as mat;
+
+@include mat.core();
+@import './palettes';
+
+// Define a dark theme
+$dark-theme: mat.define-dark-theme((
+ color: (
+   primary: mat.define-palette($primary),
+   accent: mat.define-palette($accent),
+ ),
+  typography: mat.define-typography-config(),
+  density: 0,
+));
+
+// Define a light theme
+$light-theme: mat.define-light-theme((
+ color: (
+   primary: mat.define-palette($primary),
+   accent: mat.define-palette($accent),
+ ),
+));
+
+
+.light-theme {
+  @include mat.all-component-colors($light-theme);
+  background-color: #FDFDFF;
+  color: #272962;
+
+  .header-theme {
+    border-bottom: 1px solid #9B9EF0;
+    background-color: #FDFDFF;
+  }
+
+  .card-theme {
+    background-color: #F0F1FE ;
+  }
+}
+
+.dark-theme {
+  @include mat.all-component-colors($dark-theme);
+  background-color: #13131E;
+  color: #E0DFFE;
+
+  .header-theme {
+    border-bottom: 1px solid #3D3E82;
+    background-color: #13131E;
+  }
+
+  .card-theme {
+    background-color: #202248;
+  }
+}

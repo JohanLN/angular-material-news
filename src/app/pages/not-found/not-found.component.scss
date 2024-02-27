@@ -1,0 +1,57 @@
+@import '../../../assets//scss/common';
+
+.not-found-container {
+  height: 100%;
+  width: 50%;
+  margin-left: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+}
+
+.not-found-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.not-found-title {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  @media (min-width: $medium) {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+  @media (min-width: $large) {
+    font-size: 3rem;
+    line-height: 1rem;
+  }
+  color: rgb(107 114 128);
+  margin-top: 3rem;
+}
+
+.not-found-sorry {
+  @media (min-width: $medium) {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+  @media (min-width: $large) {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  color: rgb(75 85 99);
+  margin-top: 2rem;
+}
+
+.not-found-href {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: rgb(37 99 235);
+  color: rgb(243 244 246);
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+}

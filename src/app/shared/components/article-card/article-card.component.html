@@ -1,0 +1,15 @@
+<mat-card>
+  @if (article.urlToImage) {
+    <img mat-card-image [src]="article.urlToImage" [alt]="article.title" class="image-cover">
+  }
+  <mat-card-content class="article-content">
+    <h1>{{article.title}}</h1>
+    @if (article.description) {
+      <p>{{article.description}}</p>
+    }
+    <div class="author-section">
+      <p>{{article.author}}</p>
+      <p>{{compareArticleDataFromNow(article.publishedAt)}}</p>
+    </div>
+  </mat-card-content>
+</mat-card>
