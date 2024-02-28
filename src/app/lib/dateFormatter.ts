@@ -17,3 +17,13 @@ export function compareArticleDateFromNow(articleDate: string) {
     }
   }
 }
+
+export function stringDateToFormatedDate(articleDate: string) {
+  const date = new Date(articleDate);
+
+  return [
+    String(date.getDate()),
+    String(date.getMonth()),
+    String(date.getFullYear()),
+  ].join('/');
+}

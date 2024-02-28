@@ -3,6 +3,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { Article } from '../../../core/models/article.model';
+import { stringDateToFormatedDate } from '../../../lib/dateFormatter';
 import { NavigationComponent } from '../../../shared/components/navigation/navigation/navigation.component';
 
 @Component({
@@ -18,4 +19,8 @@ export class ArticlesDetailsComponent {
   article: Article = JSON.parse(
     this.activatedRoute.snapshot.paramMap.get('article') ?? ''
   );
+
+  stringDateToFormatedDate(articleDate: string) {
+    return stringDateToFormatedDate(articleDate);
+  }
 }

@@ -1,0 +1,11 @@
+<mat-form-field>
+  <mat-label>{{ label }}</mat-label>
+  <mat-select
+    [(value)]="selectedOption"
+    (selectionChange)="onSelectionChange()"
+  >
+    @if (options.length) { @for (option of options; track $index) {
+    <mat-option [value]="option">{{ option }}</mat-option>
+    } }
+  </mat-select>
+</mat-form-field>

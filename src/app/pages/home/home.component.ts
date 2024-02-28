@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { newsMock } from '../../core/constants/news-mock';
 import { News } from '../../core/models/news.model';
 import { NewsService } from '../../core/services/news/news.service';
 import { ArticleCardComponent } from '../../shared/components/article-card/article-card.component';
-import { FilterComponent } from '../../shared/components/filter/filter/filter.component';
 import { NavigationComponent } from '../../shared/components/navigation/navigation/navigation.component';
+import { SearchComponent } from '../../shared/components/search/search/search.component';
 import { WeatherComponent } from '../../shared/components/weather/weather/weather.component';
 
 @Component({
@@ -15,36 +14,49 @@ import { WeatherComponent } from '../../shared/components/weather/weather/weathe
     ArticleCardComponent,
     MatGridListModule,
     NavigationComponent,
-    FilterComponent,
     WeatherComponent,
+    SearchComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
   news: News | undefined = undefined;
+  selectedCategory?: string;
+  selectedCountry?: string;
+  searchParam?: string;
 
   constructor(private newsService: NewsService) {}
 
   ngOnInit(): void {
-    // this.getHeadlines();
-    this.news = newsMock;
-    console.log('coucou', this.news);
-  }
-
-  getEverything() {
-    this.newsService.getEverything().subscribe({
-      next: (newsResponse: News) => {
-        this.news = newsResponse;
-      },
-    });
+    this.getHeadlines();
   }
 
   getHeadlines() {
-    this.newsService.getHeadlines().subscribe({
-      next: (newsResponse: News) => {
-        this.news = newsResponse;
-      },
-    });
+    this.newsService
+      .getHeadlines(
+        this.searchParam,
+        this.selectedCategory,
+        this.selectedCountry
+      )
+      .subscribe({
+        next: (newsResponse: News) => {
+          this.news = newsResponse;
+        },
+      });
+  }
+
+  onSearchSubmited(searchInput: string) {
+    this.searchParam = searchInput;
+    this.getHeadlines();
+  }
+
+  onCategorySelectionChange(selectedOption: string) {
+    this.selectedCategory = selectedOption;
+    this.getHeadlines();
+  }
+  onCountrySelectionChange(selectedOption: string) {
+    this.selectedCountry = selectedOption;
+    this.getHeadlines();
   }
 }

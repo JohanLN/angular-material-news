@@ -6,7 +6,7 @@
       <div class="article-infos">
         <div>
           <p>{{ article.author }}</p>
-          <p>{{ article.publishedAt }}</p>
+          <p>{{ stringDateToFormatedDate(article.publishedAt) }}</p>
         </div>
         <a [href]="article.url" target="_blank">
           <mat-icon color="accent">open_in_new</mat-icon>

@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from '../../../../environments/environment.development';
-import { DEFAULT_COUNTRY } from '../../constants/constants';
+import { urlFormatter } from '../../../lib';
 import { News } from '../../models/news.model';
 
 @Injectable({
@@ -11,15 +11,16 @@ import { News } from '../../models/news.model';
 export class NewsService {
   constructor(private httpClient: HttpClient) {}
 
-  getEverything(): Observable<News> {
-    return this.httpClient.get<News>(
-      `${environment.urlEverything}country=${DEFAULT_COUNTRY}`
-    );
-  }
+  getHeadlines(
+    search?: string,
+    category?: string,
+    country?: string
+  ): Observable<News> {
+    const formattedUrl = urlFormatter(search, category, country);
+    console.log('formattedUrl', formattedUrl);
 
-  getHeadlines(): Observable<News> {
     return this.httpClient.get<News>(
-      `${environment.urlTopHealines}country=${DEFAULT_COUNTRY}`
+      `${environment.urlTopHealines}${formattedUrl}`
     );
   }
 }

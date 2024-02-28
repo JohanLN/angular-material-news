@@ -1,13 +1,22 @@
 <div class="home-container">
   <app-navigation class="navigation-container"></app-navigation>
   <div class="article-container">
-    <app-filter></app-filter>
+    <app-search
+      (searchSubmited)="onSearchSubmited($event)"
+      (categorySelectionChange)="onCategorySelectionChange($event)"
+      (countrySelectionChange)="onCountrySelectionChange($event)"
+    ></app-search>
     <div>
-      @if (news) { @for (article of news.articles; track $index) {
+      @if (news && news.articles && news.articles.length) { @for (article of
+      news.articles; track $index) {
       <div class="article-list">
         <app-article-card [article]="article"></app-article-card>
       </div>
-      } }
+      } } @else {
+      <div class="article-list">
+        <h1>No result...</h1>
+      </div>
+      }
     </div>
   </div>
   <app-weather class="weather-container"></app-weather>
